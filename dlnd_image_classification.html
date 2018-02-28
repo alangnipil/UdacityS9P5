@@ -11775,8 +11775,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#22270;&#20687;&#20998;&#31867;">&#22270;&#20687;&#20998;&#31867;<a class="anchor-link" href="#&#22270;&#20687;&#20998;&#31867;">&#182;</a></h1><p>在此项目中，你将对 <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 数据集</a> 中的图片进行分类。该数据集包含飞机、猫狗和其他物体。你需要预处理这些图片，然后用所有样本训练一个卷积神经网络。图片需要标准化（normalized），标签需要采用 one-hot 编码。你需要应用所学的知识构建卷积的、最大池化（max pooling）、丢弃（dropout）和完全连接（fully connected）的层。最后，你需要在样本图片上看到神经网络的预测结果。</p>
-<h2 id="&#33719;&#21462;&#25968;&#25454;">&#33719;&#21462;&#25968;&#25454;<a class="anchor-link" href="#&#33719;&#21462;&#25968;&#25454;">&#182;</a></h2><p>请运行以下单元，以下载 <a href="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz">CIFAR-10 数据集（Python版）</a>。</p>
+<h1 id="&#22270;&#20687;&#20998;&#31867;">&#22270;&#20687;&#20998;&#31867;<a class="anchor-link" href="#&#22270;&#20687;&#20998;&#31867;">&#182;</a></h1><p>在此项目中，你将对 <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 数据集</a> 中的图片进行分类。该数据集包含飞机、猫狗和其他物体。你需要预处理这些图片，然后用所有样本训练一个卷积神经网络。图片需要标准化（normalized），标签需要采用 one-hot 编码。你需要应用所学的知识构建卷积的、最大池化（max pooling）、丢弃（dropout）和完全连接（fully connected）的层。最后，你需要在样本图片上看到神经网络的预测结果。</p>
+<h2 id="&#33719;&#21462;&#25968;&#25454;">&#33719;&#21462;&#25968;&#25454;<a class="anchor-link" href="#&#33719;&#21462;&#25968;&#25454;">&#182;</a></h2><p>请运行以下单元，以下载 <a href="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz">CIFAR-10 数据集（Python版）</a>。</p>
 
 </div>
 </div>
@@ -11866,7 +11866,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#25506;&#32034;&#25968;&#25454;">&#25506;&#32034;&#25968;&#25454;<a class="anchor-link" href="#&#25506;&#32034;&#25968;&#25454;">&#182;</a></h2><p>该数据集分成了几部分／批次（batches），以免你的机器在计算时内存不足。CIFAR-10 数据集包含 5 个部分，名称分别为 <code>data_batch_1</code>、<code>data_batch_2</code>，以此类推。每个部分都包含以下某个类别的标签和图片：</p>
+<h2 id="&#25506;&#32034;&#25968;&#25454;">&#25506;&#32034;&#25968;&#25454;<a class="anchor-link" href="#&#25506;&#32034;&#25968;&#25454;">&#182;</a></h2><p>该数据集分成了几部分／批次（batches），以免你的机器在计算时内存不足。CIFAR-10 数据集包含 5 个部分，名称分别为 <code>data_batch_1</code>、<code>data_batch_2</code>，以此类推。每个部分都包含以下某个类别的标签和图片：</p>
 <ul>
 <li>飞机</li>
 <li>汽车</li>
@@ -11879,7 +11879,7 @@ div#notebook {
 <li>船只</li>
 <li>卡车</li>
 </ul>
-<p>了解数据集也是对数据进行预测的必经步骤。你可以通过更改 <code>batch_id</code> 和 <code>sample_id</code> 探索下面的代码单元。<code>batch_id</code> 是数据集一个部分的 ID（1 到 5）。<code>sample_id</code> 是该部分中图片和标签对（label pair）的 ID。</p>
+<p>了解数据集也是对数据进行预测的必经步骤。你可以通过更改 <code>batch_id</code> 和 <code>sample_id</code> 探索下面的代码单元。<code>batch_id</code> 是数据集一个部分的 ID（1 到 5）。<code>sample_id</code> 是该部分中图片和标签对（label pair）的 ID。</p>
 <p>问问你自己：“可能的标签有哪些？”、“图片数据的值范围是多少？”、“标签是按顺序排列，还是随机排列的？”。思考类似的问题，有助于你预处理数据，并使预测结果更准确。</p>
 
 </div>
@@ -12084,7 +12084,7 @@ height=250
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#23454;&#29616;&#39044;&#22788;&#29702;&#20989;&#25968;">&#23454;&#29616;&#39044;&#22788;&#29702;&#20989;&#25968;<a class="anchor-link" href="#&#23454;&#29616;&#39044;&#22788;&#29702;&#20989;&#25968;">&#182;</a></h2><h3 id="&#26631;&#20934;&#21270;">&#26631;&#20934;&#21270;<a class="anchor-link" href="#&#26631;&#20934;&#21270;">&#182;</a></h3><p>在下面的单元中，实现 <code>normalize</code> 函数，传入图片数据 <code>x</code>，并返回标准化 Numpy 数组。值应该在 0 到 1 的范围内（含 0 和 1）。返回对象应该和 <code>x</code> 的形状一样。</p>
+<h2 id="&#23454;&#29616;&#39044;&#22788;&#29702;&#20989;&#25968;">&#23454;&#29616;&#39044;&#22788;&#29702;&#20989;&#25968;<a class="anchor-link" href="#&#23454;&#29616;&#39044;&#22788;&#29702;&#20989;&#25968;">&#182;</a></h2><h3 id="&#26631;&#20934;&#21270;">&#26631;&#20934;&#21270;<a class="anchor-link" href="#&#26631;&#20934;&#21270;">&#182;</a></h3><p>在下面的单元中，实现 <code>normalize</code> 函数，传入图片数据 <code>x</code>，并返回标准化 Numpy 数组。值应该在 0 到 1 的范围内（含 0 和 1）。返回对象应该和 <code>x</code> 的形状一样。</p>
 
 </div>
 </div>
@@ -12101,7 +12101,7 @@ height=250
 <span class="sd">    : return: Numpy array of normalize data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: Implement Function</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.0</span><span class="p">)</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -12137,7 +12137,7 @@ height=250
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="One-hot-&#32534;&#30721;">One-hot &#32534;&#30721;<a class="anchor-link" href="#One-hot-&#32534;&#30721;">&#182;</a></h3><p>和之前的代码单元一样，你将为预处理实现一个函数。这次，你将实现 <code>one_hot_encode</code> 函数。输入，也就是 <code>x</code>，是一个标签列表。实现该函数，以返回为 one_hot 编码的 Numpy 数组的标签列表。标签的可能值为 0 到 9。每次调用 <code>one_hot_encode</code> 时，对于每个值，one_hot 编码函数应该返回相同的编码。确保将编码映射保存到该函数外面。</p>
+<h3 id="One-hot-&#32534;&#30721;">One-hot &#32534;&#30721;<a class="anchor-link" href="#One-hot-&#32534;&#30721;">&#182;</a></h3><p>和之前的代码单元一样，你将为预处理实现一个函数。这次，你将实现 <code>one_hot_encode</code> 函数。输入，也就是 <code>x</code>，是一个标签列表。实现该函数，以返回为 one_hot 编码的 Numpy 数组的标签列表。标签的可能值为 0 到 9。每次调用 <code>one_hot_encode</code> 时，对于每个值，one_hot 编码函数应该返回相同的编码。确保将编码映射保存到该函数外面。</p>
 <p>提示：不要重复发明轮子。</p>
 
 </div>
@@ -12257,8 +12257,8 @@ height=250
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#26500;&#24314;&#32593;&#32476;">&#26500;&#24314;&#32593;&#32476;<a class="anchor-link" href="#&#26500;&#24314;&#32593;&#32476;">&#182;</a></h2><p>对于该神经网络，你需要将每层都构建为一个函数。你看到的大部分代码都位于函数外面。要更全面地测试你的代码，我们需要你将每层放入一个函数中。这样使我们能够提供更好的反馈，并使用我们的统一测试检测简单的错误，然后再提交项目。</p>
-<blockquote><p><strong>注意</strong>：如果你觉得每周很难抽出足够的时间学习这门课程，我们为此项目提供了一个小捷径。对于接下来的几个问题，你可以使用 <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a> 程序包中的类来构建每个层级，但是“卷积和最大池化层级”部分的层级除外。TF Layers 和 Keras 及 TFLearn 层级类似，因此很容易学会。</p>
-<p>但是，如果你想充分利用这门课程，请尝试自己解决所有问题，不使用 TF Layers 程序包中的任何类。你依然可以使用其他程序包中的类，这些类和你在 TF Layers 中的类名称是一样的！例如，你可以使用 TF Neural Network 版本的 <code>conv2d</code> 类 <a href="https://www.tensorflow.org/api_docs/python/tf/nn/conv2d">tf.nn.conv2d</a>，而不是 TF Layers 版本的 <code>conv2d</code> 类 <a href="https://www.tensorflow.org/api_docs/python/tf/layers/conv2d">tf.layers.conv2d</a>。</p>
+<blockquote><p><strong>注意</strong>：如果你觉得每周很难抽出足够的时间学习这门课程，我们为此项目提供了一个小捷径。对于接下来的几个问题，你可以使用 <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a> 程序包中的类来构建每个层级，但是“卷积和最大池化层级”部分的层级除外。TF Layers 和 Keras 及 TFLearn 层级类似，因此很容易学会。</p>
+<p>但是，如果你想充分利用这门课程，请尝试自己解决所有问题，不使用 TF Layers 程序包中的任何类。你依然可以使用其他程序包中的类，这些类和你在 TF Layers 中的类名称是一样的！例如，你可以使用 TF Neural Network 版本的 <code>conv2d</code> 类 <a href="https://www.tensorflow.org/api_docs/python/tf/nn/conv2d">tf.nn.conv2d</a>，而不是 TF Layers 版本的 <code>conv2d</code> 类 <a href="https://www.tensorflow.org/api_docs/python/tf/layers/conv2d">tf.layers.conv2d</a>。</p>
 </blockquote>
 <p>我们开始吧！</p>
 <h3 id="&#36755;&#20837;">&#36755;&#20837;<a class="anchor-link" href="#&#36755;&#20837;">&#182;</a></h3><p>神经网络需要读取图片数据、one-hot 编码标签和丢弃保留概率（dropout keep probability）。请实现以下函数：</p>
@@ -12266,23 +12266,23 @@ height=250
 <li>实现 <code>neural_net_image_input</code><ul>
 <li>返回 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a></li>
 <li>使用 <code>image_shape</code> 设置形状，部分大小设为 <code>None</code></li>
-<li>使用 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a> 中的 TensorFlow <code>name</code> 参数对 TensorFlow 占位符 "x" 命名</li>
+<li>使用 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a> 中的 TensorFlow <code>name</code> 参数对 TensorFlow 占位符 "x" 命名</li>
 </ul>
 </li>
 <li>实现 <code>neural_net_label_input</code><ul>
 <li>返回 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a></li>
 <li>使用 <code>n_classes</code> 设置形状，部分大小设为 <code>None</code></li>
-<li>使用 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a> 中的 TensorFlow <code>name</code> 参数对 TensorFlow 占位符 "y" 命名</li>
+<li>使用 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a> 中的 TensorFlow <code>name</code> 参数对 TensorFlow 占位符 "y" 命名</li>
 </ul>
 </li>
 <li>实现 <code>neural_net_keep_prob_input</code><ul>
 <li>返回 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a>，用于丢弃保留概率</li>
-<li>使用 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a> 中的 TensorFlow <code>name</code> 参数对 TensorFlow 占位符 "keep_prob" 命名</li>
+<li>使用 <a href="https://www.tensorflow.org/api_docs/python/tf/placeholder">TF Placeholder</a> 中的 TensorFlow <code>name</code> 参数对 TensorFlow 占位符 "keep_prob" 命名</li>
 </ul>
 </li>
 </ul>
 <p>这些名称将在项目结束时，用于加载保存的模型。</p>
-<p>注意：TensorFlow 中的 <code>None</code> 表示形状可以是动态大小。</p>
+<p>注意：TensorFlow 中的 <code>None</code> 表示形状可以是动态大小。</p>
 
 </div>
 </div>
@@ -12361,21 +12361,21 @@ Keep Prob Tests Passed.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#21367;&#31215;&#21644;&#26368;&#22823;&#27744;&#21270;&#23618;">&#21367;&#31215;&#21644;&#26368;&#22823;&#27744;&#21270;&#23618;<a class="anchor-link" href="#&#21367;&#31215;&#21644;&#26368;&#22823;&#27744;&#21270;&#23618;">&#182;</a></h3><p>卷积层级适合处理图片。对于此代码单元，你应该实现函数 <code>conv2d_maxpool</code> 以便应用卷积然后进行最大池化：</p>
+<h3 id="&#21367;&#31215;&#21644;&#26368;&#22823;&#27744;&#21270;&#23618;">&#21367;&#31215;&#21644;&#26368;&#22823;&#27744;&#21270;&#23618;<a class="anchor-link" href="#&#21367;&#31215;&#21644;&#26368;&#22823;&#27744;&#21270;&#23618;">&#182;</a></h3><p>卷积层级适合处理图片。对于此代码单元，你应该实现函数 <code>conv2d_maxpool</code> 以便应用卷积然后进行最大池化：</p>
 <ul>
-<li>使用 <code>conv_ksize</code>、<code>conv_num_outputs</code> 和 <code>x_tensor</code> 的形状创建权重（weight）和偏置（bias）。</li>
-<li>使用权重和 <code>conv_strides</code> 对 <code>x_tensor</code> 应用卷积。<ul>
+<li>使用 <code>conv_ksize</code>、<code>conv_num_outputs</code> 和 <code>x_tensor</code> 的形状创建权重（weight）和偏置（bias）。</li>
+<li>使用权重和 <code>conv_strides</code> 对 <code>x_tensor</code> 应用卷积。<ul>
 <li>建议使用我们建议的间距（padding），当然也可以使用任何其他间距。</li>
 </ul>
 </li>
 <li>添加偏置</li>
 <li>向卷积中添加非线性激活（nonlinear activation）</li>
-<li>使用 <code>pool_ksize</code> 和 <code>pool_strides</code> 应用最大池化<ul>
+<li>使用 <code>pool_ksize</code> 和 <code>pool_strides</code> 应用最大池化<ul>
 <li>建议使用我们建议的间距（padding），当然也可以使用任何其他间距。</li>
 </ul>
 </li>
 </ul>
-<p><strong>注意</strong>：对于<strong>此层</strong>，<strong>请勿使用</strong> <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a>，但是仍然可以使用 TensorFlow 的 <a href="https://www.tensorflow.org/api_docs/python/tf/nn">Neural Network</a> 包。对于所有<strong>其他层</strong>，你依然可以使用快捷方法。</p>
+<p><strong>注意</strong>：对于<strong>此层</strong>，<strong>请勿使用</strong> <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a>，但是仍然可以使用 TensorFlow 的 <a href="https://www.tensorflow.org/api_docs/python/tf/nn">Neural Network</a> 包。对于所有<strong>其他层</strong>，你依然可以使用快捷方法。</p>
 
 </div>
 </div>
@@ -12441,7 +12441,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#25153;&#24179;&#21270;&#23618;">&#25153;&#24179;&#21270;&#23618;<a class="anchor-link" href="#&#25153;&#24179;&#21270;&#23618;">&#182;</a></h3><p>实现 <code>flatten</code> 函数，将 <code>x_tensor</code> 的维度从四维张量（4-D tensor）变成二维张量。输出应该是形状（<em>部分大小（Batch Size）</em>，<em>扁平化图片大小（Flattened Image Size）</em>）。快捷方法：对于此层，你可以使用 <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a> 包中的类。如果你想要更大挑战，可以仅使用其他 TensorFlow 程序包。</p>
+<h3 id="&#25153;&#24179;&#21270;&#23618;">&#25153;&#24179;&#21270;&#23618;<a class="anchor-link" href="#&#25153;&#24179;&#21270;&#23618;">&#182;</a></h3><p>实现 <code>flatten</code> 函数，将 <code>x_tensor</code> 的维度从四维张量（4-D tensor）变成二维张量。输出应该是形状（<em>部分大小（Batch Size）</em>，<em>扁平化图片大小（Flattened Image Size）</em>）。快捷方法：对于此层，你可以使用 <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a> 包中的类。如果你想要更大挑战，可以仅使用其他 TensorFlow 程序包。</p>
 
 </div>
 </div>
@@ -12494,7 +12494,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#20840;&#36830;&#25509;&#23618;">&#20840;&#36830;&#25509;&#23618;<a class="anchor-link" href="#&#20840;&#36830;&#25509;&#23618;">&#182;</a></h3><p>实现 <code>fully_conn</code> 函数，以向 <code>x_tensor</code> 应用完全连接的层级，形状为（<em>部分大小（Batch Size）</em>，<em>num_outputs</em>）。快捷方法：对于此层，你可以使用 <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a> 包中的类。如果你想要更大挑战，可以仅使用其他 TensorFlow 程序包。</p>
+<h3 id="&#20840;&#36830;&#25509;&#23618;">&#20840;&#36830;&#25509;&#23618;<a class="anchor-link" href="#&#20840;&#36830;&#25509;&#23618;">&#182;</a></h3><p>实现 <code>fully_conn</code> 函数，以向 <code>x_tensor</code> 应用完全连接的层级，形状为（<em>部分大小（Batch Size）</em>，<em>num_outputs</em>）。快捷方法：对于此层，你可以使用 <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a> 包中的类。如果你想要更大挑战，可以仅使用其他 TensorFlow 程序包。</p>
 
 </div>
 </div>
@@ -12555,7 +12555,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#36755;&#20986;&#23618;">&#36755;&#20986;&#23618;<a class="anchor-link" href="#&#36755;&#20986;&#23618;">&#182;</a></h3><p>实现 <code>output</code> 函数，向 x_tensor 应用完全连接的层级，形状为（<em>部分大小（Batch Size）</em>，<em>num_outputs</em>）。快捷方法：对于此层，你可以使用 <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a> 包中的类。如果你想要更大挑战，可以仅使用其他 TensorFlow 程序包。</p>
+<h3 id="&#36755;&#20986;&#23618;">&#36755;&#20986;&#23618;<a class="anchor-link" href="#&#36755;&#20986;&#23618;">&#182;</a></h3><p>实现 <code>output</code> 函数，向 x_tensor 应用完全连接的层级，形状为（<em>部分大小（Batch Size）</em>，<em>num_outputs</em>）。快捷方法：对于此层，你可以使用 <a href="https://www.tensorflow.org/api_docs/python/tf/layers">TensorFlow Layers</a> 或 <a href="https://www.tensorflow.org/api_guides/python/contrib.layers">TensorFlow Layers (contrib)</a> 包中的类。如果你想要更大挑战，可以仅使用其他 TensorFlow 程序包。</p>
 <p><strong>注意</strong>：该层级不应应用 Activation、softmax 或交叉熵（cross entropy）。</p>
 
 </div>
@@ -12616,14 +12616,14 @@ Keep Prob Tests Passed.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#21019;&#24314;&#21367;&#31215;&#27169;&#22411;">&#21019;&#24314;&#21367;&#31215;&#27169;&#22411;<a class="anchor-link" href="#&#21019;&#24314;&#21367;&#31215;&#27169;&#22411;">&#182;</a></h3><p>实现函数 <code>conv_net</code>， 创建卷积神经网络模型。该函数传入一批图片 <code>x</code>，并输出对数（logits）。使用你在上方创建的层创建此模型：</p>
+<h3 id="&#21019;&#24314;&#21367;&#31215;&#27169;&#22411;">&#21019;&#24314;&#21367;&#31215;&#27169;&#22411;<a class="anchor-link" href="#&#21019;&#24314;&#21367;&#31215;&#27169;&#22411;">&#182;</a></h3><p>实现函数 <code>conv_net</code>， 创建卷积神经网络模型。该函数传入一批图片 <code>x</code>，并输出对数（logits）。使用你在上方创建的层创建此模型：</p>
 <ul>
 <li>应用 1、2 或 3 个卷积和最大池化层（Convolution and Max Pool layers）</li>
 <li>应用一个扁平层（Flatten Layer）</li>
 <li>应用 1、2 或 3 个完全连接层（Fully Connected Layers）</li>
 <li>应用一个输出层（Output Layer）</li>
 <li>返回输出</li>
-<li>使用 <code>keep_prob</code> 向模型中的一个或多个层应用 <a href="https://www.tensorflow.org/api_docs/python/tf/nn/dropout">TensorFlow 的 Dropout</a></li>
+<li>使用 <code>keep_prob</code> 向模型中的一个或多个层应用 <a href="https://www.tensorflow.org/api_docs/python/tf/nn/dropout">TensorFlow 的 Dropout</a></li>
 </ul>
 
 </div>
@@ -12739,13 +12739,13 @@ Keep Prob Tests Passed.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#35757;&#32451;&#31070;&#32463;&#32593;&#32476;">&#35757;&#32451;&#31070;&#32463;&#32593;&#32476;<a class="anchor-link" href="#&#35757;&#32451;&#31070;&#32463;&#32593;&#32476;">&#182;</a></h2><h3 id="&#21333;&#27425;&#20248;&#21270;">&#21333;&#27425;&#20248;&#21270;<a class="anchor-link" href="#&#21333;&#27425;&#20248;&#21270;">&#182;</a></h3><p>实现函数 <code>train_neural_network</code> 以进行单次优化（single optimization）。该优化应该使用 <code>optimizer</code> 优化 <code>session</code>，其中 <code>feed_dict</code> 具有以下参数：</p>
+<h2 id="&#35757;&#32451;&#31070;&#32463;&#32593;&#32476;">&#35757;&#32451;&#31070;&#32463;&#32593;&#32476;<a class="anchor-link" href="#&#35757;&#32451;&#31070;&#32463;&#32593;&#32476;">&#182;</a></h2><h3 id="&#21333;&#27425;&#20248;&#21270;">&#21333;&#27425;&#20248;&#21270;<a class="anchor-link" href="#&#21333;&#27425;&#20248;&#21270;">&#182;</a></h3><p>实现函数 <code>train_neural_network</code> 以进行单次优化（single optimization）。该优化应该使用 <code>optimizer</code> 优化 <code>session</code>，其中 <code>feed_dict</code> 具有以下参数：</p>
 <ul>
 <li><code>x</code> 表示图片输入</li>
 <li><code>y</code> 表示标签</li>
 <li><code>keep_prob</code> 表示丢弃的保留率</li>
 </ul>
-<p>每个部分都会调用该函数，所以 <code>tf.global_variables_initializer()</code> 已经被调用。</p>
+<p>每个部分都会调用该函数，所以 <code>tf.global_variables_initializer()</code> 已经被调用。</p>
 <p>注意：不需要返回任何内容。该函数只是用来优化神经网络。</p>
 
 </div>
@@ -12802,7 +12802,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#26174;&#31034;&#25968;&#25454;">&#26174;&#31034;&#25968;&#25454;<a class="anchor-link" href="#&#26174;&#31034;&#25968;&#25454;">&#182;</a></h3><p>实现函数 <code>print_stats</code> 以输出损失和验证准确率。使用全局变量 <code>valid_features</code> 和 <code>valid_labels</code> 计算验证准确率。使用保留率 <code>1.0</code> 计算损失和验证准确率（loss and validation accuracy）。</p>
+<h3 id="&#26174;&#31034;&#25968;&#25454;">&#26174;&#31034;&#25968;&#25454;<a class="anchor-link" href="#&#26174;&#31034;&#25968;&#25454;">&#182;</a></h3><p>实现函数 <code>print_stats</code> 以输出损失和验证准确率。使用全局变量 <code>valid_features</code> 和 <code>valid_labels</code> 计算验证准确率。使用保留率 <code>1.0</code> 计算损失和验证准确率（loss and validation accuracy）。</p>
 
 </div>
 </div>
